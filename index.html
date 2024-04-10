@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anakin测试聊天</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Anakin测试聊天</h1>
+    <div id="modelSelectContainer">
+        <label for="modelSelect">选择模型：</label>
+        <select id="modelSelect">
+            <option value="gpt-3.5-turbo-0125">Gpt 3.5 Turbo 0125</option>
+            <option value="gpt-4-0125-preview">Gpt 4 0125 Preview</option>
+            <option value="claude-3-sonnet">Claude 3 Sonnet</option>
+            <option value="claude-3-haiku">Claude 3 Haiku</option>
+            <option value="claude-3-haiku-20240307">Claude 3 Haiku 20240307</option>
+            <option value="anthropic/claude-3-sonnet">Anthropic/Claude 3 Sonnet</option>
+            <option value="claude-3-opus">Claude 3 Opus</option>
+            <option value="anthropic/claude-3-opus">Anthropic/Claude 3 Opus</option>
+            <option value="claude-instant-1.2">Claude Instant 1.2</option>
+            <option value="claude-instant-1">Claude Instant 1</option>
+            <option value="claude-2.1">Claude 2.1</option>
+            <option value="claude-2">Claude 2</option>
+            <option value="databricks/dbrx-instruct">Databricks/Dbrx Instruct</option>
+            <option value="gemini-pro">Gemini Pro</option>
+            <option value="gemini-pro-vertex">Gemini Pro Vertex</option>
+            <option value="mistral-large-latest">Mistral Large Latest</option>
+            <option value="mistralai/mistral-7b-instruct">Mistralai/Mistral 7B Instruct</option>
+            <option value="mistralai/mistral-7b-instruct:free">Mistralai/Mistral 7B Instruct:Free</option>
+            <option value="mistral-medium-latest">Mistral Medium Latest</option>
+            <option value="mistralai/mixtral-8x7b-instruct">Mistralai/Mixtral 8X7B Instruct</option>
+            <option value="mistralai/mixtral-8x7b">Mistralai/Mixtral 8X7B</option>
+            <option value="mistralai/mixtral-8x7b-instruct:nitro">Mistralai/Mixtral 8X7B Instruct:Nitro</option>
+            <option value="mistral-small-latest">Mistral Small Latest</option>
+            <option value="mistralai/mistral-tiny">Mistralai/Mistral Tiny</option>
+            <option value="google/gemma-7b-it">Google/Gemma 7B It</option>
+            <option value="google/gemma-7b-it:free">Google/Gemma 7B It:Free</option>
+            <option value="cognitivecomputations/dolphin-mixtral-8x7b">Cognitivecomputations/Dolphin Mixtral 8X7B</option>
+            <option value="nousresearch/nous-hermes-2-mixtral-8x7b-dpo">Nousresearch/Nous Hermes 2 Mixtral 8X7B Dpo</option>
+            <option value="nousresearch/nous-hermes-2-mixtral-8x7b-sft">Nousresearch/Nous Hermes 2 Mixtral 8X7B Sft</option>
+            <option value="meta-llama/llama-2-70b-chat">Meta Llama/Llama 2 70B Chat</option>
+            <option value="meta-llama/llama-2-70b-chat:nitro">Meta Llama/Llama 2 70B Chat:Nitro</option>
+            <option value="meta-llama/llama-2-13b-chat">Meta Llama/Llama 2 13B Chat</option>
+            <option value="google/palm-2-chat-bison">Google/Palm 2 Chat Bison</option>
+            <option value="google/palm-2-chat-bison-32k">Google/Palm 2 Chat Bison 32K</option>
+            <option value="nousresearch/nous-capybara-34b">Nousresearch/Nous Capybara 34B</option>
+            <option value="nousresearch/nous-capybara-7b">Nousresearch/Nous Capybara 7B</option>
+            <option value="nousresearch/nous-capybara-7b:free">Nousresearch/Nous Capybara 7B:Free</option>
+            <option value="huggingfaceh4/zephyr-7b-beta">Huggingfaceh4/Zephyr 7B Beta</option>
+            <option value="huggingfaceh4/zephyr-7b-beta:free">Huggingfaceh4/Zephyr 7B Beta:Free</option>
+            <option value="openchat/openchat-7b">Openchat/Openchat 7B</option>
+            <option value="openchat/openchat-7b:free">Openchat/Openchat 7B:Free</option>
+            <option value="gryphe/mythomist-7b">Gryphe/Mythomist 7B</option>
+            <option value="gryphe/mythomist-7b:free">Gryphe/Mythomist 7B:Free</option>
+            <option value="openrouter/cinematika-7b">Openrouter/Cinematika 7B</option>
+            <option value="openrouter/cinematika-7b:free">Openrouter/Cinematika 7B:Free</option>
+            <option value="rwkv/rwkv-5-world-3b">Rwkv/Rwkv 5 World 3B</option>
+            <option value="recursal/rwkv-5-3b-ai-town">Recursal/Rwkv 5 3B Ai Town</option>
+            <option value="jebcarter/psyfighter-13b">Jebcarter/Psyfighter 13B</option>
+            <option value="koboldai/psyfighter-13b-2">Koboldai/Psyfighter 13B 2</option>
+            <option value="nousresearch/nous-hermes-llama2-13b">Nousresearch/Nous Hermes Llama2 13B</option>
+            <option value="meta-llama/codellama-34b-instruct">Meta Llama/Codellama 34B Instruct</option>
+            <option value="phind/phind-codellama-34b">Phind/Phind Codellama 34B</option>
+            <option value="intel/neural-chat-7b">Intel/Neural Chat 7B</option>
+            <option value="perplexity/pplx-70b-online">Perplexity/Pplx 70B Online</option>
+            <option value="perplexity/pplx-7b-online">Perplexity/Pplx 7B Online</option>
+            <option value="jondurbin/airoboros-l2-70b">Jondurbin/Airoboros L2 70B</option>
+            <option value="migtissera/synthia-70b">Migtissera/Synthia 70B</option>
+            <option value="teknium/openhermes-2-mistral-7b">Teknium/Openhermes 2 Mistral 7B</option>
+            <option value="teknium/openhermes-2.5-mistral-7b">Teknium/Openhermes 2.5 Mistral 7B</option>
+            <option value="pygmalionai/mythalion-13b">Pygmalionai/Mythalion 13B</option>
+            <option value="undi95/remm-slerp-l2-13b">Undi95/Remm Slerp L2 13B</option>
+            <option value="xwin-lm/xwin-lm-70b">Xwin Lm/Xwin Lm 70B</option>
+            <option value="gryphe/mythomax-l2-13b-8k">Gryphe/Mythomax L2 13B 8K</option>
+            <option value="undi95/toppy-m-7b">Undi95/Toppy M 7B</option>
+            <option value="alpindale/goliath-120b">Alpindale/Goliath 120B</option>
+            <option value="lizpreciatior/lzlv-70b-fp16-hf">Lizpreciatior/Lzlv 70B Fp16 Hf</option>
+            <option value="neversleep/noromaid-20b">Neversleep/Noromaid 20B</option>
+            <option value="01-ai/yi-34b-chat">01 Ai/Yi 34B Chat</option>
+            <option value="01-ai/yi-34b">01 Ai/Yi 34B</option>
+            <option value="01-ai/yi-6b">01 Ai/Yi 6B</option>
+            <option value="togethercomputer/stripedhyena-nous-7b">Togethercomputer/Stripedhyena Nous 7B</option>
+            <option value="togethercomputer/stripedhyena-hessian-7b">Togethercomputer/Stripedhyena Hessian 7B</option>
+            <option value="mancer/weaver">Mancer/Weaver</option>
+            <option value="open-orca/mistral-7b-openorca">Open Orca/Mistral 7B Openorca</option>
+            <option value="gryphe/mythomax-l2-13b">Gryphe/Mythomax L2 13B</option>
+            <option value="gpt-4">Gpt 4</option>
+            <option value="gpt-4-32k">Gpt 4 32K</option>
+            <option value="gpt-4-1106-preview">Gpt 4 1106 Preview</option>
+            <option value="gpt-3.5-turbo">Gpt 3.5 Turbo</option>
+            <option value="gpt-3.5-turbo-16k">Gpt 3.5 Turbo 16K</option>
+            <option value="gpt-3.5-turbo-1106">Gpt 3.5 Turbo 1106</option>
+            <option value="anthropic/claude-instant-v1">Anthropic/Claude Instant V1</option>
+            <option value="anthropic/claude-2">Anthropic/Claude 2</option>
+            <option value="mistralai/mistral-large">Mistralai/Mistral Large</option>
+            <option value="mistralai/mistral-medium">Mistralai/Mistral Medium</option>
+            <option value="mistralai/mistral-small">Mistralai/Mistral Small</option>
+            <option value="nousresearch/nous-hermes-llama2-70b">Nousresearch/Nous Hermes Llama2 70B</option>
+        </select>
+    </div>
+    <div id="chatContainer"></div>
+    <textarea id="userInput" placeholder="在这里输入您的消息..."></textarea>
+    <div>
+        <button id="sendButton" type="button">发送消息</button>
+        <button id="clearButton" type="button">清除消息</button>
+    </div>
+    <script src="script.js"></script>     
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>

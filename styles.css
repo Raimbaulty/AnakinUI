@@ -1,0 +1,163 @@
+:root {
+    /* 新的颜色定义 */
+    --title-color: #333;
+    --title-text-shadow-color: rgba(0,0,0,0.5);
+    --user-message-bg: rgba(221, 255, 255, 0.8);
+    --ai-message-bg: rgba(255, 221, 221, 0.8);
+    --confirm-color: #007bff;
+    --confirm-hover-color: #0056b3;
+    --button-color: #fff;
+    --delete-color: #dc3545;
+    --delete-hover-color: #890a16;
+    --input-focus-border-color: #007bff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://img2.imgtp.com/2024/04/09/8te5uv4t.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: var(--title-color);
+    text-shadow: 2px 2px 2px var(--title-text-shadow-color);
+}
+
+.message {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+    max-width: 80%;
+}
+
+.message:hover {
+    transform: translateY(-2px);
+}
+
+#chatContainer {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 60%;
+    max-height: 600px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.userMessage {
+    background-color: var(--user-message-bg);
+    align-self: flex-end;
+}
+
+.previewMessage {
+    animation: none !important; /* 关闭动画 */
+    transition: none !important; /* 关闭过渡效果 */
+}
+
+.previewMessage:hover {
+    transform: none !important; /* 关闭悬停时的变换效果 */
+}
+
+.aiMessage {
+    background-color: var(--ai-message-bg);
+    align-self: flex-start;
+}
+
+#modelSelectContainer {
+    position: relative;
+    display: inline-block;
+}
+
+#modelSelect {
+    width: calc(50% - 50px);
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+#userInput {
+    width: calc(50% - 50px);
+    max-width: 800px;
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    resize: none;
+}
+
+#userInput:focus {
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#clearButton, #sendButton {
+    padding: 10px;
+    color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    background-color: rgba(0, 123, 255, 0.8);
+}
+
+#clearButton {
+    margin-left: 10px;
+    background-color: rgba(220, 53, 69, 0.8); /* 为清除按钮设置特定的背景色 */
+}
+
+#clearButton:hover, #sendButton:hover {
+    background-color: var(--confirm-hover-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#sendButton:active, #clearButton:active {
+    transform: scale(0.98);
+}
+
+@keyframes messageIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.userMessage, .aiMessage {
+    padding: 0px 15px;
+    animation: messageIn 0.5s ease-out;
+}
